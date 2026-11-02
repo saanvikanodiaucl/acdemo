@@ -9,6 +9,7 @@ export interface RefundResult {
   success: boolean;
   refundId?: string;
   error?: string;
+  refundedAmount?: number;
 }
 
 export async function processRefund(request: RefundRequest): Promise<RefundResult> {
@@ -29,5 +30,6 @@ export async function processRefund(request: RefundRequest): Promise<RefundResul
   return {
     success: true,
     refundId,
+    refundedAmount: request.receipt.amount,
   };
 }
