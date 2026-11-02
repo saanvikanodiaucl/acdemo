@@ -1,0 +1,13 @@
+{
+  "name": "acdemo",
+  "version": "1.0.0",
+  "description": "Demo payments app for AgentCollision",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.0"
+  }
+}
