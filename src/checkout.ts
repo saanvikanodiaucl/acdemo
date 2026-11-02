@@ -12,6 +12,7 @@ export interface CheckoutResult {
   success: boolean;
   receipt?: Receipt;
   error?: string;
+  orderId?: string;
 }
 
 export async function checkout(
@@ -39,6 +40,7 @@ export async function checkout(
   }
 
   const receipt = createReceipt(result.transactionId, total, customer.id);
+  const orderId = `ord_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
 
-  return { success: true, receipt };
+  return { success: true, receipt, orderId };
 }
